@@ -23,8 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# Ignore specific tracked/ignored files
-src/CPTtracking.jsx
-src/demo.jsx
-src/Different.jsx
-src/CPT.jsx
