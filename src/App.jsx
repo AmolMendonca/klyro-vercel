@@ -40,15 +40,15 @@ const StatusBridgeLanding = () => {
             
             <div className="hidden lg:flex items-center space-x-8">
               <div className="flex items-center space-x-6 text-sm">
-                <a href="#product" className="text-gray-600 hover:text-gray-900 transition-colors">Product</a>
-                <a href="#solutions" className="text-gray-600 hover:text-gray-900 transition-colors">Solutions</a>
+                <a href="#product" className="text-gray-600 hover:text-gray-900 transition-colors">Releasing in July 2025</a>
+                {/* <a href="#solutions" className="text-gray-600 hover:text-gray-900 transition-colors">Solutions</a>
                 <a href="#resources" className="text-gray-600 hover:text-gray-900 transition-colors">Resources</a>
-                <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+                <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a> */}
               </div>
               <div className="flex items-center space-x-3">
                 {/* <button className="text-gray-600 hover:text-gray-900 text-sm"></button> */}
                 <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors">
-                  Demo
+                  Interest Form
                 </button>
               </div>
             </div>
@@ -395,27 +395,37 @@ const StatusBridgeLanding = () => {
         </div>
       </section>
 
-      {/* CTA Section - Notion style */}
-      <section className="px-6 py-24 bg-gray-50">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Get started with
-            <span className="text-gray-400"> Klyro</span> today.
-          </h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Join thousands of DSOs who've simplified their SEVIS compliance workflows. No setup required.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-gray-900 text-white px-8 py-4 rounded-md font-medium hover:bg-black transition-colors text-lg">
-              Get Klyro free
-            </button>
-            <button className="border border-gray-300 text-gray-700 px-8 py-4 rounded-md font-medium hover:border-gray-400 transition-colors text-lg">
-              Request demo
-            </button>
-          </div>
-        </div>
-      </section>
+<section className="px-6 py-24 bg-gray-50">
+  <div className="max-w-3xl mx-auto text-center">
+    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      Get started with
+      <span className="text-gray-400"> Klyro</span> today.
+    </h2>
+    <p className="text-xl text-gray-600 mb-12">
+      Join thousands of DSOs who've simplified their SEVIS compliance workflows. No setup required.
+    </p>
+
+    <form
+      action="https://formspree.io/f/xgvygwvw"
+      method="POST"
+      className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xl mx-auto"
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+        className="w-full sm:flex-1 px-6 py-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 text-lg"
+      />
+      <button
+        type="submit"
+        className="bg-gray-900 text-white px-6 py-4 rounded-md font-medium hover:bg-black transition-colors text-lg w-full sm:w-auto"
+      >
+        Join Waitlist
+      </button>
+    </form>
+  </div>
+</section>
 
       {/* Footer - Notion minimalist style */}
       <footer className="px-6 py-16 border-t border-gray-100">
@@ -432,7 +442,7 @@ const StatusBridgeLanding = () => {
                 The connected workspace for DSOs. Streamline SEVIS compliance with AI-powered workflows.
               </p>
             </div>
-            
+{/*             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
               <div>
                 <h4 className="font-semibold text-gray-900 mb-3">Product</h4>
@@ -469,7 +479,7 @@ const StatusBridgeLanding = () => {
                   <li><a href="#" className="hover:text-gray-900">Terms</a></li>
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
           
           <div className="border-t border-gray-100 pt-8 text-center text-sm text-gray-500">
