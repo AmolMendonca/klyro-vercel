@@ -49,9 +49,11 @@ const StatusBridgeLanding = () => {
               </div>
               <div className="flex items-center space-x-3">
                 {/* <button className="text-gray-600 hover:text-gray-900 text-sm"></button> */}
+                <a href="#interest-form">
                 <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors">
                   Interest Form
                 </button>
+                </a>
               </div>
             </div>
 
@@ -397,7 +399,7 @@ const StatusBridgeLanding = () => {
         </div>
       </section>
 
-<section className="px-6 py-24 bg-gray-50">
+<section id="interest-form" className="px-6 py-24 bg-gray-50">
   <div className="max-w-3xl mx-auto text-center">
     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
       Get started with
