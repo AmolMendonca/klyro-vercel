@@ -339,12 +339,12 @@ const CPTDashboard = () => {
   <div className="flex items-center space-x-4">
     <Link to="/" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900">
       <ChevronRight className="rotate-180 mr-1 w-4 h-4" />
-      <span>Back</span>
+      <span></span>
     </Link>
     <div className="flex items-center space-x-2">
       <h1 className="text-xl font-medium text-gray-900">CPT Application Management System</h1>
-      <span className="text-gray-400">/</span>
-      <span className="text-sm text-gray-600">Dashboard</span>
+      {/* <span className="text-gray-400">/</span>
+      <span className="text-sm text-gray-600">Dashboard</span> */}
     </div>
   </div>
   <div className="text-sm text-gray-500">
@@ -353,6 +353,30 @@ const CPTDashboard = () => {
 </div>
         </div>
       </header>
+
+      {/* Demo Notification Banner */}
+<div className="bg-blue-50 border-b border-blue-200">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <div className="flex items-center justify-between">
+      <div className="flex items-center space-x-3">
+        <div className="p-1 bg-blue-100 rounded-full">
+          <AlertCircle size={16} className="text-blue-600" />
+        </div>
+        <div>
+          <p className="text-sm font-medium text-blue-900">
+            Demo Mode Active
+          </p>
+          <p className="text-xs text-blue-700">
+            For full functionality, please view Sarah Chen's application details. This is a demo module and not our complete product.
+          </p>
+        </div>
+      </div>
+      {/* <button className="text-blue-600 hover:text-blue-800 text-xs font-medium">
+        Learn More
+      </button> */}
+    </div>
+  </div>
+</div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
