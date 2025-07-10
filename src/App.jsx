@@ -146,7 +146,7 @@ const StatusBridgeLanding = () => {
                 <div className="bg-gray-50 rounded-md p-4 mb-4">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="font-semibold text-gray-900">International Students</h3>
-                    <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">247 Active</span>
+                    <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">247</span>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
@@ -182,7 +182,7 @@ const StatusBridgeLanding = () => {
                       <div className="font-medium text-gray-900 text-sm">Maria Silva</div>
                       <div className="text-xs text-gray-500">Business Admin • F-1</div>
                     </div>
-                    <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">CPT Pending</span>
+                    <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Pending</span>
                   </div>
                 </div>
               </div>
