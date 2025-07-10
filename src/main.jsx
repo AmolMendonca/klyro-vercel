@@ -7,6 +7,8 @@ import CPTDashboard from './CPT.jsx'
 import ImprovedCPTModal from './Modal.jsx'
 import StatusBridgeLanding from './LandingEx.jsx'
 
+import TeamPage from './Team.jsx'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -19,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         {/* <Route path="/sevis" element={<SevisCompliancePortal />} /> */}
         <Route path="/cpt-v2" element={<ImprovedCPTModal />} />
         <Route path="/new" element={<StatusBridgeLanding />} />
+        <Route path="/team" element={<TeamPage />} />
         {/* <Route path="/onboarding" element={<StatusBridgeOnboarding />} /> */}
       </Routes>
     </BrowserRouter>

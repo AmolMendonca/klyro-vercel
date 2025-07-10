@@ -43,7 +43,10 @@ const StatusBridgeLanding = () => {
             
             <div className="hidden lg:flex items-center space-x-8">
               <div className="flex items-center space-x-6 text-sm">
-                <a href="#product" className="text-gray-600 hover:text-gray-900 transition-colors">Releasing in July 2025</a>
+                <Link to='/team'>
+                <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Team</a>
+                </Link>
+                
                 {/* <a href="#solutions" className="text-gray-600 hover:text-gray-900 transition-colors">Solutions</a>
                 <a href="#resources" className="text-gray-600 hover:text-gray-900 transition-colors">Resources</a>
                 <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a> */}
