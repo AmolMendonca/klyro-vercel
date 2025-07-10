@@ -547,15 +547,27 @@ const CPTDashboard = () => {
                           )}
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
-                          <Link to="/cpt-v2">
-                          <button
-                            onClick={() => setSelectedApp(app)}
-                            className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center space-x-1"
-                          >
-                            <span>View Details</span>
-                            <ChevronRight size={12} />
-                          </button>
-                          </Link>
+<td className="px-4 py-3 whitespace-nowrap">
+  {app.studentName === 'Sarah Chen' ? (
+    <Link to="/cpt-v2">
+      <button
+        className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center space-x-1"
+      >
+        <span>View Details</span>
+        <ChevronRight size={12} />
+      </button>
+    </Link>
+  ) : (
+    <button
+      onClick={() => setSelectedApp(app)}
+      className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center space-x-1"
+    >
+      <span>View Details</span>
+      <ChevronRight size={12} />
+    </button>
+  )}
+</td>
+
                         </td>
                       </tr>
                     );
