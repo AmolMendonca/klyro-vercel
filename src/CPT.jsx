@@ -335,20 +335,28 @@ const CPTDashboard = () => {
       {/* Header */}
       <header className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-2">
-              <h1 className="text-xl font-medium text-gray-900">CPT Application Management System</h1>
-              <span className="text-gray-400">/</span>
-              <span className="text-sm text-gray-600">Dashboard</span>
-            </div>
-            <div className="text-sm text-gray-500">
-              DSO Administrative Interface
-            </div>
-          </div>
+<div className="flex justify-between items-center py-4">
+  <div className="flex items-center space-x-4">
+    <Link to="/" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900">
+      <ChevronRight className="rotate-180 mr-1 w-4 h-4" />
+      <span>Back</span>
+    </Link>
+    <div className="flex items-center space-x-2">
+      <h1 className="text-xl font-medium text-gray-900">CPT Application Management System</h1>
+      <span className="text-gray-400">/</span>
+      <span className="text-sm text-gray-600">Dashboard</span>
+    </div>
+  </div>
+  <div className="text-sm text-gray-500">
+    DSO Administrative Interface
+  </div>
+</div>
         </div>
       </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        
         {/* Enhanced Overview Section */}
         <section className="mb-8">
           <h2 className="text-lg font-medium text-gray-900 mb-6">Application Overview</h2>
