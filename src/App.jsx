@@ -53,7 +53,7 @@ const StatusBridgeLanding = () => {
               </div>
               <div className="flex items-center space-x-3">
                 {/* <button className="text-gray-600 hover:text-gray-900 text-sm"></button> */}
-                <Link to="/cpt">
+                <Link to="/cpt-demo">
                   <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors">
                     Try our CPT MVP
                   </button>

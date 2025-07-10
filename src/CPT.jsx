@@ -337,7 +337,7 @@ const CPTDashboard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div className="flex justify-between items-center py-4">
   <div className="flex items-center space-x-4">
-    <Link to="/" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900">
+    <Link to="/cpt-demo" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900">
       <ChevronRight className="rotate-180 mr-1 w-4 h-4" />
       <span></span>
     </Link>

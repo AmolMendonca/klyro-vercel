@@ -9,6 +9,8 @@ import StatusBridgeLanding from './LandingEx.jsx'
 
 import TeamPage from './Team.jsx'
 
+import CPTDemoPage from './DemoNotification.jsx'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -22,6 +24,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/cpt-v2" element={<ImprovedCPTModal />} />
         <Route path="/new" element={<StatusBridgeLanding />} />
         <Route path="/team" element={<TeamPage />} />
+        <Route path="/cpt-demo" element={<CPTDemoPage />} />
+
         {/* <Route path="/onboarding" element={<StatusBridgeOnboarding />} /> */}
       </Routes>
     </BrowserRouter>
