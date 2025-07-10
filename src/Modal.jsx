@@ -24,6 +24,8 @@ import {
   X
 } from 'lucide-react';
 
+import { Link } from 'react-router-dom';
+
 const CPTApplicationReview = () => {
   const [selectedDocument, setSelectedDocument] = useState(null);
   const [showApprovalModal, setShowApprovalModal] = useState(false);
@@ -222,10 +224,13 @@ const CPTApplicationReview = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-4">
+              
+              <Link to="/cpt">
               <button className="flex items-center text-gray-600 hover:text-gray-900">
                 <ArrowLeft size={20} className="mr-2" />
                 Back to Applications
               </button>
+              </Link>
               <div className="h-6 w-px bg-gray-300"></div>
               <div>
                 <h1 className="text-xl font-semibold text-gray-900">{selectedApp.studentName} - {selectedApp.company}</h1>

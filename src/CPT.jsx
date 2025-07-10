@@ -19,6 +19,9 @@ import {
   UserCheck
 } from 'lucide-react';
 
+import { Link } from 'react-router-dom';
+
+
 const CPTDashboard = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
@@ -544,6 +547,7 @@ const CPTDashboard = () => {
                           )}
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
+                          <Link to="/cpt-v2">
                           <button
                             onClick={() => setSelectedApp(app)}
                             className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center space-x-1"
@@ -551,6 +555,7 @@ const CPTDashboard = () => {
                             <span>View Details</span>
                             <ChevronRight size={12} />
                           </button>
+                          </Link>
                         </td>
                       </tr>
                     );
