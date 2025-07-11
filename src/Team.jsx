@@ -24,7 +24,7 @@ const TeamPage = () => {
       role: "Co-founder & CEO",
       education: "University of Michigan",
       degree: "BS Computer Science",
-      bio: "Leading product vision and strategy for DSO workflows. Passionate about building tools that simplify complex compliance processes.",
+      bio: "Led product across early-stage startups, shipping web3 tools, and AI-driven search products. Helped 5 startups GTM, and contributed to pre-seed rounds. Co-founded a health-tech startup which scaled to 20,000+ users and partnered with hospitals and tech companies.",
       avatar: "AM",
       color: "bg-blue-100 text-blue-700"
     },
@@ -33,7 +33,7 @@ const TeamPage = () => {
       role: "Co-founder & CTO",
       education: "University of Michigan",
       degree: "BS & MS Computer Science",
-      bio: "Architecting AI-powered systems for document analysis and workflow automation. Expert in machine learning and scalable infrastructure.",
+      bio: " Led reinforcement learning and statistical arbitrage projects, built AI agents for top hedge funds and banks, and developed real-time trading platforms. Teaches AI and databases at the university as a graduate student instructor.",
       avatar: "PK",
       color: "bg-green-100 text-green-700"
     },
@@ -42,7 +42,7 @@ const TeamPage = () => {
       role: "Co-founder & COO",
       education: "Ohio Wesleyan University",
       degree: "BS Computer Science & Business",
-      bio: "Driving go-to-market strategy and partnerships with educational institutions. Bridging the gap between technology and user needs.",
+      bio: "Built products used by thousands and designed tools for Fortune 500 banks. Led product at both early-stage ventures and corporate internships, raised pre-seed funding, and conducted cognitive research on gamification and attention. ",
       avatar: "IT",
       color: "bg-purple-100 text-purple-700"
     }
