@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         {/* <Route path="/sevis" element={<SevisCompliancePortal />} /> */}
         <Route path="/cpt-v2" element={<ImprovedCPTModal />} />
         <Route path="/new" element={<StatusBridgeLanding />} />
-        <Route path="/team" element={<TeamPage />} />
+        <Route path="/about" element={<TeamPage />} />
         <Route path="/cpt-demo" element={<CPTDemoPage />} />
 
         {/* <Route path="/onboarding" element={<StatusBridgeOnboarding />} /> */}

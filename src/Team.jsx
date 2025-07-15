@@ -21,7 +21,7 @@ import {
   Lightbulb
 } from 'lucide-react';
 
-
+import { Link } from 'react-router-dom';
 
 const AboutUsPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,17 +93,23 @@ const AboutUsPage = () => {
               <div className="w-8 h-8 bg-black rounded-md flex items-center justify-center">
                 <Shield className="w-4 h-4 text-white" />
               </div>
+                            <Link to="/">
+
               <span className="text-lg font-semibold text-gray-900">Klyro</span>
+              </Link>
             </div>
+            
             
             <div className="hidden lg:flex items-center space-x-8">
               <div className="flex items-center space-x-6 text-sm">
                 <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
               </div>
               <div className="flex items-center space-x-3">
+                <Link to="/cpt-demo">
                 <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors">
                   Try our CPT MVP
                 </button>
+                </Link>
               </div>
             </div>
 
