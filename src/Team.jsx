@@ -404,10 +404,12 @@ const AboutUsPage = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link to="/cpt-demo">
             <button className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium hover:bg-black transition-colors flex items-center">
               Try our CPT MVP
               <ArrowRight className="w-4 h-4 ml-2" />
             </button>
+            </Link>
             <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-md font-medium hover:border-gray-400 transition-colors flex items-center">
               <Mail className="w-4 h-4 mr-2" />
               Schedule a demo
