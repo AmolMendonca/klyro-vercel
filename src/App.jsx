@@ -43,7 +43,7 @@ const StatusBridgeLanding = () => {
             
             <div className="hidden lg:flex items-center space-x-8">
               <div className="flex items-center space-x-6 text-sm">
-                <Link to='/team'>
+                <Link to='/about'>
                 <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">About Us</a>
                 </Link>
                 
