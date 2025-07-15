@@ -44,7 +44,7 @@ const StatusBridgeLanding = () => {
             <div className="hidden lg:flex items-center space-x-8">
               <div className="flex items-center space-x-6 text-sm">
                 <Link to='/team'>
-                <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Team</a>
+                <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">About Us</a>
                 </Link>
                 
                 {/* <a href="#solutions" className="text-gray-600 hover:text-gray-900 transition-colors">Solutions</a>
@@ -76,15 +76,15 @@ const StatusBridgeLanding = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
-              Effortless
+              Automate
               <br />
-              <span className="text-gray-400">SEVIS compliance</span>
+              <span className="text-gray-400">SEVIS Compliance</span>
               <br />
-              in one platform
+              with AI
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Streamline CPT reviews, automate workflows, and manage international students with AI assistance—all in one workspace built for DSOs.
+              From I-20 processing to SEVIS records, streamline every part of the compliance workflow. Our AI-powered platform helps DSOs manage international student cases faster and more accurately.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">

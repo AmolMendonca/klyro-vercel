@@ -10,12 +10,20 @@ import {
   MapPin,
   Linkedin,
   Github,
-  Mail
+  Mail,
+  Clock,
+  Target,
+  Zap,
+  Globe,
+  CheckCircle,
+  TrendingUp,
+  Heart,
+  Lightbulb
 } from 'lucide-react';
 
-import { Link } from 'react-router-dom';
 
-const TeamPage = () => {
+
+const AboutUsPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const teamMembers = [
@@ -33,7 +41,7 @@ const TeamPage = () => {
       role: "Co-founder & CTO",
       education: "University of Michigan",
       degree: "BS & MS Computer Science",
-      bio: " Led reinforcement learning and statistical arbitrage projects, built AI agents for top hedge funds and banks, and developed real-time trading platforms. Teaches AI and databases at the university as a graduate student instructor.",
+      bio: "Led reinforcement learning and statistical arbitrage projects, built AI agents for top hedge funds and banks, and developed real-time trading platforms. Teaches AI and databases at the university as a graduate student instructor.",
       avatar: "PK",
       color: "bg-green-100 text-green-700"
     },
@@ -42,9 +50,36 @@ const TeamPage = () => {
       role: "Co-founder & COO",
       education: "Ohio Wesleyan University",
       degree: "BS Computer Science & Business",
-      bio: "Built products used by thousands and designed tools for Fortune 500 banks. Led product at both early-stage ventures and corporate internships, raised pre-seed funding, and conducted cognitive research on gamification and attention. ",
+      bio: "Built products used by thousands and designed tools for Fortune 500 banks. Led product at both early-stage ventures and corporate internships, raised pre-seed funding, and conducted cognitive research on gamification and attention.",
       avatar: "IT",
       color: "bg-purple-100 text-purple-700"
+    }
+  ];
+
+  const impactMetrics = [
+    {
+      number: "5,000+",
+      label: "Hours saved for DSOs",
+      icon: Clock,
+      color: "text-blue-600"
+    },
+    {
+      number: "80%",
+      label: "Faster CPT processing",
+      icon: Zap,
+      color: "text-green-600"
+    },
+    {
+      number: "50+",
+      label: "Universities served",
+      icon: Building,
+      color: "text-purple-600"
+    },
+    {
+      number: "10,000+",
+      label: "Students helped",
+      icon: Users,
+      color: "text-orange-600"
     }
   ];
 
@@ -63,9 +98,7 @@ const TeamPage = () => {
             
             <div className="hidden lg:flex items-center space-x-8">
               <div className="flex items-center space-x-6 text-sm">
-                <Link to='/'>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
-                </Link>
+                <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
               </div>
               <div className="flex items-center space-x-3">
                 <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors">
@@ -84,20 +117,185 @@ const TeamPage = () => {
         </div>
       </nav>
 
+      {/* Hero Section */}
+      <section className="px-6 py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-8">
+            <Heart className="w-4 h-4 mr-2" />
+            About Klyro
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
+            Transforming international
+            <span className="text-gray-400"> education, one DSO at a time.</span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+            We're on a mission to revolutionize how Designated School Officials manage international student services through AI-powered automation, saving thousands of hours while ensuring perfect compliance.
+          </p>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="px-6 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm font-medium mb-6">
+              <Target className="w-4 h-4 mr-2" />
+              Our Mission
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Empowering DSOs to focus on
+              <span className="text-gray-400"> what matters most.</span>
+            </h2>
+          </div>
+
+          <div className="bg-gray-50 rounded-2xl p-12 mb-16">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-8">
+                <Lightbulb className="w-10 h-10 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                "To eliminate the administrative burden that prevents DSOs from providing exceptional support to international students."
+              </h3>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Every hour spent on manual CPT reviews, compliance tracking, and document verification is an hour not spent mentoring students, solving complex cases, or building stronger international programs. We're changing that reality.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <div className="inline-flex items-center bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-6">
+                <Users className="w-4 h-4 mr-2" />
+                For DSOs
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Reclaim your time for what matters</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">Automated CPT processing</p>
+                    <p className="text-gray-600">AI reviews applications in minutes, not hours</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">Intelligent compliance tracking</p>
+                    <p className="text-gray-600">Never miss a deadline or violation again</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">Seamless SEVIS integration</p>
+                    <p className="text-gray-600">Direct updates without manual data entry</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="inline-flex items-center bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium mb-6">
+                <Globe className="w-4 h-4 mr-2" />
+                For Students
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Faster, clearer, more supportive</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">Instant application feedback</p>
+                    <p className="text-gray-600">Know exactly what's needed, when it's needed</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">Real-time status updates</p>
+                    <p className="text-gray-600">Track your application every step of the way</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">Personalized guidance</p>
+                    <p className="text-gray-600">AI-powered recommendations for your situation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Story Section */}
+      <section className="px-6 py-24">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Our story
+              <span className="text-gray-400"> starts with experience.</span>
+            </h2>
+            <p className="text-xl text-gray-600">
+              Having navigated the complexities of international student services firsthand, we understand the challenges DSOs face every day.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-gray-50 rounded-lg p-8">
+              <div className="inline-flex items-center bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <Building className="w-4 h-4 mr-2" />
+                The Problem
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Manual processes, endless paperwork</h3>
+              <p className="text-gray-600 mb-4">
+                During our college years, we witnessed DSOs drowning in manual CPT reviews, struggling with compliance tracking, and managing hundreds of international students with outdated tools.
+              </p>
+              <p className="text-gray-600 mb-4">
+                Hours spent on document verification, endless spreadsheets, and the constant fear of compliance violations - we knew there had to be a better way.
+              </p>
+              <div className="bg-white rounded-lg p-4 border-l-4 border-red-400">
+                <p className="text-sm text-gray-600 italic">
+                  "We watched brilliant DSOs spend 70% of their time on administrative tasks instead of helping students succeed."
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-8">
+              <div className="inline-flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <Code className="w-4 h-4 mr-2" />
+                The Solution
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">AI-powered automation for DSOs</h3>
+              <p className="text-gray-600 mb-4">
+                We combined our computer science expertise with deep understanding of SEVIS requirements to build an intelligent platform that automates the tedious while empowering the human touch.
+              </p>
+              <p className="text-gray-600 mb-4">
+                From AI-powered document analysis to automated compliance tracking, Klyro transforms how DSOs manage international student services.
+              </p>
+              <div className="bg-white rounded-lg p-4 border-l-4 border-green-400">
+                <p className="text-sm text-gray-600 italic">
+                  "Now DSOs can focus on what they do best - supporting students through their academic journey."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section id="team" className="px-6 py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium mb-6">
               <Users className="w-4 h-4 mr-2" />
-              Our Founders
+              Meet the Team
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               The minds behind
               <span className="text-gray-400"> Klyro.</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From personal experience navigating international student processes to building AI-powered solutions that help thousands of DSOs worldwide.
+              Three international students turned founders, united by a shared vision to transform how universities support global talent.
             </p>
           </div>
 
@@ -141,53 +339,8 @@ const TeamPage = () => {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="px-6 py-24">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our story
-              <span className="text-gray-400"> starts with experience.</span>
-            </h2>
-            <p className="text-xl text-gray-600">
-              Having navigated the complexities of international student services firsthand, we understand the challenges DSOs face every day.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-gray-50 rounded-lg p-8">
-              <div className="inline-flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
-                <Building className="w-4 h-4 mr-2" />
-                The Problem
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Manual processes, endless paperwork</h3>
-              <p className="text-gray-600 mb-4">
-                During our college years, we witnessed DSOs drowning in manual CPT reviews, struggling with compliance tracking, and managing hundreds of international students with outdated tools.
-              </p>
-              <p className="text-gray-600">
-                Hours spent on document verification, endless spreadsheets, and the constant fear of compliance violations - we knew there had to be a better way.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-lg p-8">
-              <div className="inline-flex items-center bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
-                <Code className="w-4 h-4 mr-2" />
-                The Solution
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">AI-powered automation for DSOs</h3>
-              <p className="text-gray-600 mb-4">
-                We combined our computer science expertise with deep understanding of SEVIS requirements to build an intelligent platform that automates the tedious while empowering the human touch.
-              </p>
-              <p className="text-gray-600">
-                From AI-powered document analysis to automated compliance tracking, Klyro transforms how DSOs manage international student services.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Values Section */}
-      <section className="px-6 py-24 bg-gray-50">
+      <section className="px-6 py-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -234,24 +387,24 @@ const TeamPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-24">
+      <section className="px-6 py-24 bg-gray-50">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Ready to join our
-            <span className="text-gray-400"> mission?</span>
+            Ready to transform your
+            <span className="text-gray-400"> DSO workflow?</span>
           </h2>
           <p className="text-xl text-gray-600 mb-12">
-            We're always looking for talented individuals who share our passion for improving international education.
+            Join the growing community of DSOs who've already saved thousands of hours with Klyro.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium hover:bg-black transition-colors flex items-center">
-              Get early access
+              Try our CPT MVP
               <ArrowRight className="w-4 h-4 ml-2" />
             </button>
             <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-md font-medium hover:border-gray-400 transition-colors flex items-center">
               <Mail className="w-4 h-4 mr-2" />
-              Contact us
+              Schedule a demo
             </button>
           </div>
         </div>
@@ -283,4 +436,4 @@ const TeamPage = () => {
   );
 };
 
-export default TeamPage;
+export default AboutUsPage;
