@@ -38,7 +38,7 @@ const CPTApplicationReview = () => {
     studentId: 'S12345678',
     major: 'Computer Science',
     company: 'Google LLC',
-    position: 'Software Engineering Intern',
+    position: 'SWE Intern',
     submittedDate: '2025-06-08',
     status: 'pending',
     aiScore: 95,
