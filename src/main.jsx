@@ -11,6 +11,8 @@ import TeamPage from './Team.jsx'
 
 import CPTDemoPage from './DemoNotification.jsx'
 
+import PricingPage from './Pricing.jsx'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -27,6 +29,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/cpt-demo" element={<CPTDemoPage />} />
 
         {/* <Route path="/onboarding" element={<StatusBridgeOnboarding />} /> */}
+
+        <Route path="/pricing" element={<PricingPage />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
