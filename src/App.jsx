@@ -16,9 +16,8 @@ import {
   Database,
   Calendar
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
-/* Amol */
+import { Link } from 'react-router-dom';
 
 const StatusBridgeLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,21 +41,23 @@ const StatusBridgeLanding = () => {
             </div>
             
             <div className="hidden lg:flex items-center space-x-8">
+              <Link to ="/about">
               <div className="flex items-center space-x-6 text-sm">
-                <Link to='/about'>
                 <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">About Us</a>
-                </Link>
-                
-                {/* <a href="#solutions" className="text-gray-600 hover:text-gray-900 transition-colors">Solutions</a>
-                <a href="#resources" className="text-gray-600 hover:text-gray-900 transition-colors">Resources</a>
-                <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a> */}
               </div>
+              </Link>
+
+              <Link to ="/pricing">
+              <div className="flex items-center space-x-6 text-sm">
+                <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+              </div>
+              </Link>
+  
               <div className="flex items-center space-x-3">
-                {/* <button className="text-gray-600 hover:text-gray-900 text-sm"></button> */}
                 <Link to="/cpt-demo">
-                  <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors">
-                    Try our CPT MVP
-                  </button>
+                <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors">
+                  Try our CPT MVP
+                </button>
                 </Link>
               </div>
             </div>
@@ -68,6 +69,46 @@ const StatusBridgeLanding = () => {
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
+          
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="lg:hidden border-t border-gray-100 bg-white">
+              <div className="px-6 py-4 space-y-4">
+                <Link to='/about'>
+                <a 
+                  href="#" 
+                  className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About Us
+                </a>
+                </Link>
+
+                <Link to='/pricing'>
+                <a 
+                  href="#" 
+                  className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Pricing
+                </a>
+                </Link>
+
+                <Link to="/cpt-demo">
+                <a 
+                  href="#" 
+                  className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Try our CPT Demo
+                </a>
+                </Link>
+
+
+
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -403,37 +444,30 @@ const StatusBridgeLanding = () => {
         </div>
       </section>
 
-<section id="interest-form" className="px-6 py-24 bg-gray-50">
-  <div className="max-w-3xl mx-auto text-center">
-    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-      Get started with
-      <span className="text-gray-400"> Klyro</span> today.
-    </h2>
-    <p className="text-xl text-gray-600 mb-12">
-      Join thousands of DSOs who've simplified their SEVIS compliance workflows. No setup required.
-    </p>
+      <section id="interest-form" className="px-6 py-24 bg-gray-50">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Get started with
+            <span className="text-gray-400"> Klyro</span> today.
+          </h2>
+          <p className="text-xl text-gray-600 mb-12">
+            Join thousands of DSOs who've simplified their SEVIS compliance workflows. No setup required.
+          </p>
 
-    <form
-      action="https://formspree.io/f/xgvygwvw"
-      method="POST"
-      className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xl mx-auto"
-    >
-      <input
-        type="email"
-        name="email"
-        placeholder="Enter your email"
-        required
-        className="w-full sm:flex-1 px-6 py-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 text-lg"
-      />
-      <button
-        type="submit"
-        className="bg-gray-900 text-white px-6 py-4 rounded-md font-medium hover:bg-black transition-colors text-lg w-full sm:w-auto"
-      >
-        Join Waitlist
-      </button>
-    </form>
-  </div>
-</section>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xl mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full sm:flex-1 px-6 py-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 text-lg"
+            />
+            <button
+              className="bg-gray-900 text-white px-6 py-4 rounded-md font-medium hover:bg-black transition-colors text-lg w-full sm:w-auto"
+            >
+              Join Waitlist
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* Footer - Notion minimalist style */}
       <footer className="px-6 py-16 border-t border-gray-100">
@@ -450,44 +484,6 @@ const StatusBridgeLanding = () => {
                 The connected workspace for DSOs. Streamline SEVIS compliance with AI-powered workflows.
               </p>
             </div>
-{/*             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-3">Product</h4>
-                <ul className="space-y-2 text-gray-600">
-                  <li><a href="#" className="hover:text-gray-900">Student Dashboard</a></li>
-                  <li><a href="#" className="hover:text-gray-900">CPT Review</a></li>
-                  <li><a href="#" className="hover:text-gray-900">Compliance Portal</a></li>
-                  <li><a href="#" className="hover:text-gray-900">AI Features</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-3">Solutions</h4>
-                <ul className="space-y-2 text-gray-600">
-                  <li><a href="#" className="hover:text-gray-900">For DSOs</a></li>
-                  <li><a href="#" className="hover:text-gray-900">For Universities</a></li>
-                  <li><a href="#" className="hover:text-gray-900">For Students</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-3">Resources</h4>
-                <ul className="space-y-2 text-gray-600">
-                  <li><a href="#" className="hover:text-gray-900">Help Center</a></li>
-                  <li><a href="#" className="hover:text-gray-900">API Docs</a></li>
-                  <li><a href="#" className="hover:text-gray-900">Templates</a></li>
-                  <li><a href="#" className="hover:text-gray-900">Blog</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-3">Company</h4>
-                <ul className="space-y-2 text-gray-600">
-                  <li><a href="#" className="hover:text-gray-900">About</a></li>
-                  <li><a href="#" className="hover:text-gray-900">Careers</a></li>
-                  <li><a href="#" className="hover:text-gray-900">Privacy</a></li>
-                  <li><a href="#" className="hover:text-gray-900">Terms</a></li>
-                </ul>
-              </div>
-            </div> */}
           </div>
           
           <div className="border-t border-gray-100 pt-8 text-center text-sm text-gray-500">
