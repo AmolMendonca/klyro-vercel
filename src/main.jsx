@@ -27,6 +27,8 @@ import PendingRequests from './PendingRequests.jsx'
 
 import StudentDashboard from './Students.jsx'
 
+import KlyroWaitlistPage from './Waitlist.jsx'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -55,7 +57,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/batch" element={<SEVISBatchUpload />} />
         <Route path="/requests" element={<PendingRequests />} />
         <Route path="/students" element={<StudentDashboard />} />
-        
+        <Route path="/waitlist" element={<KlyroWaitlistPage />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
