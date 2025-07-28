@@ -48,11 +48,11 @@ const StudentDashboard = () => {
       status: 'Active',
       country: 'Mexico',
       visaType: 'F-1',
-      sevisId: 'N0123456789',
+      sevisId: 'M0123789376',
       enrollmentDate: '2023-08-28',
       graduationDate: '2025-05-15',
       creditsCompleted: '24/36',
-      advisor: 'Dr. Smith',
+      advisor: 'Dr. Tyler',
       lastActivity: '2 hours ago',
       statusColor: 'green'
     },
@@ -66,7 +66,7 @@ const StudentDashboard = () => {
       status: 'Active',
       country: 'China',
       visaType: 'F-1',
-      sevisId: 'N0234567890',
+      sevisId: 'K139431933',
       enrollmentDate: '2023-01-15',
       graduationDate: '2024-12-20',
       creditsCompleted: '48/60',
@@ -84,7 +84,7 @@ const StudentDashboard = () => {
       status: 'CPT Pending',
       country: 'South Korea',
       visaType: 'F-1',
-      sevisId: 'N0345678901',
+      sevisId: 'N133842134',
       enrollmentDate: '2022-08-25',
       graduationDate: '2026-05-18',
       creditsCompleted: '78/120',
@@ -138,7 +138,7 @@ const StudentDashboard = () => {
       status: 'Active',
       country: 'India',
       visaType: 'F-1',
-      sevisId: 'N0678901234',
+      sevisId: 'N314921039',
       enrollmentDate: '2022-08-28',
       graduationDate: '2024-08-20',
       creditsCompleted: '34/36',
@@ -159,7 +159,7 @@ const StudentDashboard = () => {
       sevisId: 'N0789012345',
       enrollmentDate: '2023-08-25',
       graduationDate: '2025-05-20',
-      creditsCompleted: '21/36',
+      creditsCompleted: '10/36',
       advisor: 'Dr. Wilson',
       lastActivity: '4 hours ago',
       statusColor: 'green'
@@ -222,10 +222,10 @@ const StudentDashboard = () => {
 
   // Filter students based on search and filters
   const filteredStudents = students.filter(student => {
-    const matchesSearch = student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         student.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         student.sevisId.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         student.program.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = student.name.toLowerCase().includes(searchQuery1.toLowerCase()) ||
+                          student.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          student.sevisId.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          student.program.toLowerCase().includes(searchQuery.toLowerCase());
     
     const matchesStatus = filterStatus === 'all' || student.status === filterStatus;
     const matchesProgram = filterProgram === 'all' || student.program === filterProgram;

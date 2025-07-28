@@ -17,15 +17,43 @@ import {
   Calendar
 } from 'lucide-react';
 
-import { Link } from 'react-router-dom';
-
 const StatusBridgeLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [email, setEmail] = useState('');
+  const [emailStatus, setEmailStatus] = useState('idle'); // idle, submitting, success, error
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleEmailSubmit = async (e) => {
+    e.preventDefault();
+    setEmailStatus('submitting');
+
+    try {
+      const response = await fetch('https://formspree.io/f/xgvygwvw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setEmailStatus('success');
+        setMessage('Thanks for joining our waitlist! We\'ll be in touch soon.');
+        setEmail('');
+      } else {
+        setEmailStatus('error');
+        setMessage('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setEmailStatus('error');
+      setMessage('Network error. Please check your connection and try again.');
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -41,24 +69,18 @@ const StatusBridgeLanding = () => {
             </div>
             
             <div className="hidden lg:flex items-center space-x-8">
-              <Link to ="/about">
               <div className="flex items-center space-x-6 text-sm">
                 <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">About Us</a>
               </div>
-              </Link>
 
-              <Link to ="/pricing">
               <div className="flex items-center space-x-6 text-sm">
                 <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
               </div>
-              </Link>
   
               <div className="flex items-center space-x-3">
-                <Link to="/cpt-demo">
                 <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors">
                   Try our CPT MVP
                 </button>
-                </Link>
               </div>
             </div>
 
@@ -74,7 +96,6 @@ const StatusBridgeLanding = () => {
           {isMenuOpen && (
             <div className="lg:hidden border-t border-gray-100 bg-white">
               <div className="px-6 py-4 space-y-4">
-                <Link to='/about'>
                 <a 
                   href="#" 
                   className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1"
@@ -82,9 +103,7 @@ const StatusBridgeLanding = () => {
                 >
                   About Us
                 </a>
-                </Link>
 
-                <Link to='/pricing'>
                 <a 
                   href="#" 
                   className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1"
@@ -92,9 +111,7 @@ const StatusBridgeLanding = () => {
                 >
                   Pricing
                 </a>
-                </Link>
 
-                <Link to="/cpt-demo">
                 <a 
                   href="#" 
                   className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1"
@@ -102,8 +119,6 @@ const StatusBridgeLanding = () => {
                 >
                   Try our CPT Demo
                 </a>
-                </Link>
-
               </div>
             </div>
           )}
@@ -127,7 +142,10 @@ const StatusBridgeLanding = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-              <button className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium hover:bg-black transition-colors flex items-center">
+              <button 
+                onClick={() => document.getElementById('interest-form').scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium hover:bg-black transition-colors flex items-center"
+              >
                 Get Klyro free
                 <ArrowRight className="w-4 h-4 ml-2" />
               </button>
@@ -442,6 +460,7 @@ const StatusBridgeLanding = () => {
         </div>
       </section>
 
+      {/* Email Signup Section with Formspree */}
       <section id="interest-form" className="px-6 py-24 bg-gray-50">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -452,18 +471,43 @@ const StatusBridgeLanding = () => {
             Join thousands of DSOs who've simplified their SEVIS compliance workflows. No setup required.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xl mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full sm:flex-1 px-6 py-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 text-lg"
-            />
-            <button
-              className="bg-gray-900 text-white px-6 py-4 rounded-md font-medium hover:bg-black transition-colors text-lg w-full sm:w-auto"
-            >
-              Join Waitlist
-            </button>
-          </div>
+          {emailStatus === 'success' ? (
+            <div className="flex flex-col items-center justify-center gap-4 w-full max-w-xl mx-auto">
+              <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center w-full">
+                <div className="text-5xl mb-4">✨</div>
+                <p className="text-green-800 text-xl font-medium mb-2">Thanks for joining our waitlist!</p>
+                <p className="text-green-600">We'll be in touch soon with updates on our pilot program.</p>
+              </div>
+            </div>
+          ) : (
+            <div className="w-full max-w-xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+                <div className="w-full sm:flex-1">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="w-full px-6 py-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 text-lg"
+                    required
+                  />
+                </div>
+                <button
+                  onClick={handleEmailSubmit}
+                  disabled={emailStatus === 'submitting' || !email}
+                  className="bg-gray-900 text-white px-6 py-4 rounded-md font-medium hover:bg-black transition-colors text-lg w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {emailStatus === 'submitting' ? 'Joining...' : 'Join Waitlist'}
+                </button>
+              </div>
+              
+              {emailStatus === 'error' && (
+                <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-md">
+                  <p className="text-red-800 text-sm">{message}</p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </section>
 

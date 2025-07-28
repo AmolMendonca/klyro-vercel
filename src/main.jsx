@@ -32,11 +32,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+
         {/* <Route path="/demo" element={<StatusBridgeDemo />} /> */}
         {/* <Route path="/dash" element={<StudentDashboard />} /> */}
         {/* <Route path="/diff" element={<WhyDifferentPage />} /> */}
+
         <Route path="/cpt" element={<CPTDashboard />} /> 
+
         {/* <Route path="/sevis" element={<SevisCompliancePortal />} /> */}
+
         <Route path="/cpt-v2" element={<ImprovedCPTModal />} />
         <Route path="/new" element={<StatusBridgeLanding />} />
         <Route path="/about" element={<TeamPage />} />
@@ -45,19 +49,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         {/* <Route path="/onboarding" element={<StatusBridgeOnboarding />} /> */}
 
         <Route path="/pricing" element={<PricingPage />} />
-
         <Route path="/authentication" element={<KlyroLogin />} />
-
         <Route path="/admin" element={<DSODashboard />} />
-
         <Route path="/i20" element={<I20Generator />} />
-
         <Route path="/batch" element={<SEVISBatchUpload />} />
-
         <Route path="/requests" element={<PendingRequests />} />
-
         <Route path="/students" element={<StudentDashboard />} />
-
+        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
