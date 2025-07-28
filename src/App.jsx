@@ -55,6 +55,10 @@ const StatusBridgeLanding = () => {
     }
   };
 
+  const handleNavigation = (path) => {
+    window.location.href = path;
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation - Notion style */}
@@ -70,15 +74,28 @@ const StatusBridgeLanding = () => {
             
             <div className="hidden lg:flex items-center space-x-8">
               <div className="flex items-center space-x-6 text-sm">
-                <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">About Us</a>
+                <button 
+                  onClick={() => handleNavigation('/about')}
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  About Us
+                </button>
               </div>
 
               <div className="flex items-center space-x-6 text-sm">
-                <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+                <button 
+                  onClick={() => handleNavigation('/pricing')}
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Pricing
+                </button>
               </div>
   
               <div className="flex items-center space-x-3">
-                <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors">
+                <button 
+                  onClick={() => handleNavigation('/cpt-demo')}
+                  className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors"
+                >
                   Try our CPT MVP
                 </button>
               </div>
@@ -96,29 +113,35 @@ const StatusBridgeLanding = () => {
           {isMenuOpen && (
             <div className="lg:hidden border-t border-gray-100 bg-white">
               <div className="px-6 py-4 space-y-4">
-                <a 
-                  href="#" 
-                  className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1"
-                  onClick={() => setIsMenuOpen(false)}
+                <button 
+                  onClick={() => {
+                    handleNavigation('/about');
+                    setIsMenuOpen(false);
+                  }}
+                  className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1 w-full text-left"
                 >
                   About Us
-                </a>
+                </button>
 
-                <a 
-                  href="#" 
-                  className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1"
-                  onClick={() => setIsMenuOpen(false)}
+                <button 
+                  onClick={() => {
+                    handleNavigation('/pricing');
+                    setIsMenuOpen(false);
+                  }}
+                  className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1 w-full text-left"
                 >
                   Pricing
-                </a>
+                </button>
 
-                <a 
-                  href="#" 
-                  className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1"
-                  onClick={() => setIsMenuOpen(false)}
+                <button 
+                  onClick={() => {
+                    handleNavigation('/cpt-demo');
+                    setIsMenuOpen(false);
+                  }}
+                  className="block text-gray-600 hover:text-gray-900 transition-colors py-1.1 w-full text-left"
                 >
                   Try our CPT Demo
-                </a>
+                </button>
               </div>
             </div>
           )}
