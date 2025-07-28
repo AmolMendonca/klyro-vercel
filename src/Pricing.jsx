@@ -13,10 +13,11 @@ import {
   ArrowRight,
   CheckCircle,
   Play,
-  Target
+  Target,
+  Brain,
+  Clock,
+  X
 } from 'lucide-react';
-
-import { Link } from 'react-router-dom';
 
 const PricingPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,6 +26,45 @@ const PricingPage = () => {
     setIsVisible(true);
   }, []);
 
+  const comparisonFeatures = [
+    {
+      feature: 'IT Setup Required',
+      klyro: false,
+      competitors: true,
+      description: 'Ready to use immediately vs months of implementation'
+    },
+    {
+      feature: 'AI Document Parsing',
+      klyro: true,
+      competitors: false,
+      description: 'Auto-extracts data from transcripts, job letters, advisor notes'
+    },
+    {
+      feature: 'SEVIS Batch Validation',
+      klyro: true,
+      competitors: false,
+      description: 'Prevents batch failures with XML schema validation'
+    },
+    {
+      feature: 'CPT Processing Time',
+      klyro: '3-5 days',
+      competitors: '4-6 weeks',
+      description: '75% reduction in processing time'
+    },
+    {
+      feature: 'Exception Management',
+      klyro: true,
+      competitors: false,
+      description: 'RCL exceptions, medical leave, RA/TA roles handled automatically'
+    },
+    {
+      feature: 'Alert Tree System',
+      klyro: true,
+      competitors: false,
+      description: 'Proactive alerts for students at risk of falling out of status'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -32,12 +72,10 @@ const PricingPage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
-              <Link to="/">
               <button className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors">
                 <ArrowLeft className="w-4 h-4" />
                 <span className="text-sm">Back to home</span>
               </button>
-              </Link>
             </div>
             
             <div className="flex items-center space-x-2">
@@ -62,20 +100,95 @@ const PricingPage = () => {
           <p className="text-lg text-gray-600 mb-12 leading-relaxed">
             Simple, transparent pricing that scales with your international student program.
           </p>
+        </div>
+      </section>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            {/* <button className="bg-gray-900 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-black transition-colors">
-              Start free pilot
-            </button>
-            <button className="text-gray-700 px-6 py-2.5 font-medium hover:text-gray-900 transition-colors">
-              Contact sales
-            </button> */}
+      {/* Why Choose Klyro Section */}
+      <section className="px-6 py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+              Why DSOs choose Klyro
+            </h2>
+            <p className="text-lg text-gray-600">
+              Built specifically for modern DSO workflows with AI-powered automation that legacy systems can't match.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+            <div className="grid grid-cols-1 divide-y divide-gray-100">
+              <div className="grid grid-cols-3 py-4 px-6 bg-gray-50 text-sm font-medium text-gray-700">
+                <div>Feature</div>
+                <div className="text-center">Klyro</div>
+                <div className="text-center">Legacy Systems</div>
+              </div>
+              
+              {comparisonFeatures.map((item, index) => (
+                <div key={index} className="grid grid-cols-3 py-4 px-6 items-center">
+                  <div>
+                    <div className="font-medium text-gray-900">{item.feature}</div>
+                    <div className="text-sm text-gray-500 mt-1">{item.description}</div>
+                  </div>
+                  
+                  <div className="text-center">
+                    {typeof item.klyro === 'boolean' ? (
+                      item.klyro ? (
+                        <CheckCircle className="w-5 h-5 text-green-600 mx-auto" />
+                      ) : (
+                        <X className="w-5 h-5 text-gray-400 mx-auto" />
+                      )
+                    ) : (
+                      <span className="font-medium text-gray-900">{item.klyro}</span>
+                    )}
+                  </div>
+                  
+                  <div className="text-center">
+                    {typeof item.competitors === 'boolean' ? (
+                      item.competitors ? (
+                        <CheckCircle className="w-5 h-5 text-gray-400 mx-auto" />
+                      ) : (
+                        <X className="w-5 h-5 text-gray-400 mx-auto" />
+                      )
+                    ) : (
+                      <span className="text-gray-600">{item.competitors}</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Key Benefits */}
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">Zero IT Setup</h3>
+              <p className="text-sm text-gray-600">Ready to use immediately with no server setup or technical configuration</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Brain className="w-6 h-6 text-green-600" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">AI-First Platform</h3>
+              <p className="text-sm text-gray-600">Built with AI agents that parse documents and prevent compliance errors</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-6 h-6 text-purple-600" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">75% Faster</h3>
+              <p className="text-sm text-gray-600">Reduce CPT approval times from 4-6 weeks to 3-5 days</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Pricing Tiers */}
-      <section className="px-6 py-24 bg-gray-50">
+      <section className="px-6 py-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-8">
             

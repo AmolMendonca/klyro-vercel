@@ -104,8 +104,6 @@ const StatusBridgeLanding = () => {
                 </a>
                 </Link>
 
-
-
               </div>
             </div>
           )}

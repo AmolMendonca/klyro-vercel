@@ -18,10 +18,10 @@ import {
   CheckCircle,
   TrendingUp,
   Heart,
-  Lightbulb
+  Lightbulb,
+  Brain,
+  Database
 } from 'lucide-react';
-
-import { Link } from 'react-router-dom';
 
 const AboutUsPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,6 +53,15 @@ const AboutUsPage = () => {
       bio: "Built products used by thousands and designed tools for Fortune 500 banks. Led product at both early-stage ventures and corporate internships, raised pre-seed funding, and conducted cognitive research on gamification and attention.",
       avatar: "IT",
       color: "bg-purple-100 text-purple-700"
+    },
+    {
+      name: "Yugam Surana",
+      role: "CTO AI",
+      education: "UC Berkeley & Columbia University",
+      degree: "BS EECS & MS Financial Engineering",
+      bio: "AI Research Fellow at Morgan Stanley. Built AI-powered marketplaces and ML pipelines at Oracle. Founded AI ventures and specializes in machine learning systems for financial and educational technology applications.",
+      avatar: "YS",
+      color: "bg-orange-100 text-orange-700"
     }
   ];
 
@@ -93,23 +102,17 @@ const AboutUsPage = () => {
               <div className="w-8 h-8 bg-black rounded-md flex items-center justify-center">
                 <Shield className="w-4 h-4 text-white" />
               </div>
-                            <Link to="/">
-
               <span className="text-lg font-semibold text-gray-900">Klyro</span>
-              </Link>
             </div>
-            
             
             <div className="hidden lg:flex items-center space-x-8">
               <div className="flex items-center space-x-6 text-sm">
                 <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
               </div>
               <div className="flex items-center space-x-3">
-                <Link to="/cpt-demo">
                 <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors">
                   Try our CPT MVP
                 </button>
-                </Link>
               </div>
             </div>
 
@@ -233,6 +236,7 @@ const AboutUsPage = () => {
           </div>
         </div>
       </section>
+
       {/* Story Section */}
       <section className="px-6 py-24">
         <div className="max-w-4xl mx-auto">
@@ -289,9 +293,9 @@ const AboutUsPage = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="px-6 py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+      <section id="team" className="px-6 py-32 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-20">
             <div className="inline-flex items-center bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium mb-6">
               <Users className="w-4 h-4 mr-2" />
               Meet the Team
@@ -301,43 +305,48 @@ const AboutUsPage = () => {
               <span className="text-gray-400"> Klyro.</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Three international students turned founders, united by a shared vision to transform how universities support global talent.
+              Four international students turned founders, united by a shared vision to transform how universities support global talent.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="space-y-16">
             {teamMembers.map((member, index) => (
-              <div key={index} className="bg-white rounded-lg border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-center mb-6">
-                  <div className={`w-20 h-20 ${member.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                    <span className="text-xl font-bold">{member.avatar}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                  <p className="text-gray-600 font-medium mb-3">{member.role}</p>
-                  <div className="flex items-center justify-center space-x-2 text-sm text-gray-500 mb-4">
-                    <MapPin className="w-4 h-4" />
-                    <span>{member.education}</span>
-                  </div>
-                  <div className="inline-flex items-center bg-gray-50 text-gray-700 px-3 py-1 rounded-full text-sm">
-                    <Code className="w-4 h-4 mr-2" />
-                    {member.degree}
-                  </div>
+              <div key={index} className="text-center max-w-3xl mx-auto">
+                <div className={`w-24 h-24 ${member.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
+                  <span className="text-2xl font-bold">{member.avatar}</span>
                 </div>
-                
-                <p className="text-gray-600 text-center mb-6 leading-relaxed">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">{member.name}</h3>
+                <p className="text-lg text-gray-600 font-medium mb-3">{member.role}</p>
+                <div className="flex items-center justify-center space-x-2 text-gray-500 mb-4">
+                  <MapPin className="w-4 h-4" />
+                  <span>{member.education}</span>
+                </div>
+                <div className="inline-flex items-center bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm mb-6">
+                  {member.name === "Yugam Surana" ? (
+                    <>
+                      <Code className="w-4 h-4 mr-2" />
+                      {member.degree}
+                    </>
+                  ) : (
+                    <>
+                      <Code className="w-4 h-4 mr-2" />
+                      {member.degree}
+                    </>
+                  )}
+                </div>
+                <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
                   {member.bio}
                 </p>
-                
-                <div className="flex justify-center space-x-4">
-                  <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
-                    <Linkedin className="w-5 h-5" />
+                <div className="flex justify-center space-x-6">
+                  {/* <button className="p-3 text-gray-400 hover:text-gray-600 transition-colors">
+                    <Linkedin className="w-6 h-6" />
                   </button>
-                  <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
-                    <Github className="w-5 h-5" />
+                  <button className="p-3 text-gray-400 hover:text-gray-600 transition-colors">
+                    <Github className="w-6 h-6" />
                   </button>
-                  <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
-                    <Mail className="w-5 h-5" />
-                  </button>
+                  <button className="p-3 text-gray-400 hover:text-gray-600 transition-colors">
+                    <Mail className="w-6 h-6" />
+                  </button> */}
                 </div>
               </div>
             ))}
@@ -404,12 +413,10 @@ const AboutUsPage = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/cpt-demo">
             <button className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium hover:bg-black transition-colors flex items-center">
               Try our CPT MVP
               <ArrowRight className="w-4 h-4 ml-2" />
             </button>
-            </Link>
             <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-md font-medium hover:border-gray-400 transition-colors flex items-center">
               <Mail className="w-4 h-4 mr-2" />
               Schedule a demo
