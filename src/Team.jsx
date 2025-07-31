@@ -50,7 +50,7 @@ const AboutUsPage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentLogoIndex((prevIndex) => (prevIndex + 1) % logos.length);
-    }, 2000); // Change logo every 2 seconds
+    }, 1000); // Change logo every 1 second (faster)
 
     return () => clearInterval(interval);
   }, [logos.length]);
@@ -360,7 +360,7 @@ const AboutUsPage = () => {
           {/* Mobile version - carousel */}
           <div className="md:hidden">
             <div className="flex justify-center items-center">
-              <div className="relative w-32 h-16 overflow-hidden bg-gray-50 rounded-lg">
+              <div className="relative w-48 h-20 overflow-hidden">
                 {logos.map((logo, index) => (
                   <div
                     key={index}
@@ -371,30 +371,12 @@ const AboutUsPage = () => {
                     <img 
                       src={logo.src} 
                       alt={logo.alt} 
-                      className="h-10 w-auto"
+                      className="h-14 w-auto"
                       style={{ filter: 'grayscale(100%) brightness(30%)' }}
                     />
                   </div>
                 ))}
               </div>
-            </div>
-            
-            {/* Carousel indicators */}
-            <div className="flex justify-center mt-4 space-x-2">
-              {logos.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentLogoIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-                    index === currentLogoIndex ? 'bg-gray-600' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
-            </div>
-            
-            {/* Debug info - remove this after testing */}
-            <div className="text-center mt-2 text-xs text-gray-500">
-              Current: {currentLogoIndex + 1} / {logos.length}
             </div>
           </div>
         </div>
