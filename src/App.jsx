@@ -14,7 +14,9 @@ import {
   Play,
   BookOpen,
   Database,
-  Calendar
+  Calendar,
+  Rocket,
+  Settings
 } from 'lucide-react';
 
 import ucBerkeleyLogo from './logos/Berkeley.svg'
@@ -194,6 +196,7 @@ const StatusBridgeLanding = () => {
           </div>
         </div>
       </section>
+      
       {/* Credentials Section - Logo showcase */}
       <section className="px-6 py-16 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto text-center">
@@ -264,8 +267,6 @@ const StatusBridgeLanding = () => {
           </div>
         </div>
       </section>
-
-
 
       {/* Feature Sections - Notion's card style */}
       <section className="px-6 py-24 bg-gray-50">
@@ -499,8 +500,128 @@ const StatusBridgeLanding = () => {
         </div>
       </section>
 
+      {/* Launch Quick Section */}
+      <section className="px-6 py-24 bg-white">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-sm font-medium mb-6">
+              <Rocket className="w-4 h-4 mr-2" />
+              Implementation
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Launch quick,
+              <span className="text-gray-400"> scale fast.</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              From SIS integration to SEVIS connection, we handle the technical complexity so you can focus on what matters most.
+            </p>
+          </div>
+
+          {/* Three-step process */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-20">
+            {/* Step 1 */}
+            <div className="bg-gray-50 rounded-lg p-8 relative">
+              <div className="absolute -top-4 left-8">
+                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                  1
+                </div>
+              </div>
+              <div className="pt-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Expert Integration Team</h3>
+                <p className="text-gray-600 mb-4">
+                  Our engineers deploy directly to your campus to integrate with your SIS, Banner, PeopleSoft, and existing databases within days.
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                    On-site technical team
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                    SIS & database integration
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                    Custom workflow mapping
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-gray-50 rounded-lg p-8 relative">
+              <div className="absolute -top-4 left-8">
+                <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                  2
+                </div>
+              </div>
+              <div className="pt-4">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-green-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Instant Launch</h3>
+                <p className="text-gray-600 mb-4">
+                  Zero downtime deployment with immediate access to your personalized dashboard. Start processing applications the same day.
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                    Same-day go-live
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                    Pre-loaded student data
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                    Staff training included
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-gray-50 rounded-lg p-8 relative">
+              <div className="absolute -top-4 left-8">
+                <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                  3
+                </div>
+              </div>
+              <div className="pt-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Direct SEVIS Interface</h3>
+                <p className="text-gray-600 mb-4">
+                  Seamless connection to SEVIS with automated reporting, real-time status updates, and compliance monitoring from day one.
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                    Automated SEVIS reporting
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                    Real-time status sync
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                    Compliance monitoring
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* Timeline Section - Notion style */}
-      <section className="px-6 py-24">
+      <section className="px-6 py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -513,7 +634,7 @@ const StatusBridgeLanding = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 rounded-lg p-8">
+            <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
               <div className="inline-flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
                 <Calendar className="w-4 h-4 mr-2" />
                 June 2025
@@ -536,7 +657,7 @@ const StatusBridgeLanding = () => {
               </ul>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-8">
+            <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
               <div className="inline-flex items-center bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
                 <Target className="w-4 h-4 mr-2" />
                 Q4 2025
@@ -563,7 +684,7 @@ const StatusBridgeLanding = () => {
       </section>
 
       {/* Email Signup Section with Formspree */}
-      <section id="interest-form" className="px-6 py-24 bg-gray-50">
+      <section id="interest-form" className="px-6 py-24 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Get started with
@@ -614,7 +735,7 @@ const StatusBridgeLanding = () => {
       </section>
 
       {/* Footer - Notion minimalist style */}
-      <footer className="px-6 py-16 border-t border-gray-100">
+      <footer className="px-6 py-16 border-t border-gray-100 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start mb-12">
             <div className="mb-8 md:mb-0">
@@ -630,7 +751,7 @@ const StatusBridgeLanding = () => {
             </div>
           </div>
           
-          <div className="border-t border-gray-100 pt-8 text-center text-sm text-gray-500">
+          <div className="border-t border-gray-200 pt-8 text-center text-sm text-gray-500">
             © 2025 Klyro. All rights reserved.
           </div>
         </div>
@@ -638,6 +759,5 @@ const StatusBridgeLanding = () => {
     </div>
   );
 };
-
 
 export default StatusBridgeLanding;
