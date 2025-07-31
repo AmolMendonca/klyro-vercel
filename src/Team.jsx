@@ -39,7 +39,9 @@ const AboutUsPage = () => {
       degree: "BS Computer Science",
       bio: "Led product across early-stage startups, shipping web3 tools, and AI-driven search products. Helped 5 startups GTM, and contributed to pre-seed rounds. Co-founded a health-tech startup which scaled to 20,000+ users and partnered with hospitals and tech companies.",
       avatar: "AM",
-      image: amolImage, // Add this line
+      image: amolImage,
+      linkedin: "https://www.linkedin.com/in/amolmendonca/",
+      github: "https://github.com/AmolMendonca",
       color: "bg-blue-100 text-blue-700"
     },
     {
@@ -49,7 +51,9 @@ const AboutUsPage = () => {
       degree: "BS & MS Computer Science",
       bio: "Led reinforcement learning and statistical arbitrage projects, built AI agents for top hedge funds and banks, and developed real-time trading platforms. Teaches AI and databases at the university as a graduate student instructor.",
       avatar: "PK",
-      image: priteshImage, // Add this line
+      image: priteshImage,
+      linkedin: "https://www.linkedin.com/in/pritesh-mk-7b1909291/",
+      github: "https://github.com/billymidnight",
       color: "bg-green-100 text-green-700"
     },
     {
@@ -59,7 +63,9 @@ const AboutUsPage = () => {
       degree: "BS Computer Science & Business",
       bio: "Built products used by thousands and designed tools for Fortune 500 banks. Led product at both early-stage ventures and corporate internships, raised pre-seed funding, and conducted cognitive research on gamification and attention.",
       avatar: "IT",
-      image: ineshImage, // Add this line
+      image: ineshImage,
+      linkedin: "https://www.linkedin.com/in/ineshtickoo/",
+      github: "https://github.com/9nesh",
       color: "bg-purple-100 text-purple-700"
     },
     {
@@ -69,7 +75,8 @@ const AboutUsPage = () => {
       degree: "BS EECS & MS Financial Engineering",
       bio: "AI Research Fellow at Morgan Stanley. Built AI-powered marketplaces and ML pipelines at Oracle. Founded AI ventures and specializes in machine learning systems for financial and educational technology applications.",
       avatar: "YS",
-      image: yugamImage, // Add this line
+      image: yugamImage,
+      linkedin: "https://www.linkedin.com/in/yugam-surana-40202821b/",
       color: "bg-orange-100 text-orange-700"
     }
   ];
@@ -357,15 +364,24 @@ const AboutUsPage = () => {
                   {member.bio}
                 </p>
                 <div className="flex justify-center space-x-6">
-                  {/* <button className="p-3 text-gray-400 hover:text-gray-600 transition-colors">
+                  <a 
+                    href={member.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-3 text-gray-400 hover:text-blue-600 transition-colors"
+                  >
                     <Linkedin className="w-6 h-6" />
-                  </button>
-                  <button className="p-3 text-gray-400 hover:text-gray-600 transition-colors">
-                    <Github className="w-6 h-6" />
-                  </button>
-                  <button className="p-3 text-gray-400 hover:text-gray-600 transition-colors">
-                    <Mail className="w-6 h-6" />
-                  </button> */}
+                  </a>
+                  {member.github && (
+                    <a 
+                      href={member.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-3 text-gray-400 hover:text-gray-900 transition-colors"
+                    >
+                      <Github className="w-6 h-6" />
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
