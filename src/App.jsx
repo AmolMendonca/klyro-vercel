@@ -164,7 +164,7 @@ const StatusBridgeLanding = () => {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
               Automate
               <br />
-              <span className="text-gray-400">SEVIS Compliance</span>
+              <span className="text-gray-400">International Student Compliance</span>
               <br />
               with AI
             </h1>
@@ -284,7 +284,7 @@ const StatusBridgeLanding = () => {
                   <span className="text-gray-400"> organized.</span>
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Searchable database with SEVIS ID, visa status, and academic program tracking. Smart filters for work authorization and renewal management.
+                  Stop juggling spreadsheets and scattered systems. Searchable database with SEVIS ID, visa status, and academic program tracking. Smart filters for work authorization and renewal management.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center space-x-3">
@@ -365,8 +365,7 @@ const StatusBridgeLanding = () => {
                   <span className="text-gray-400"> intelligently.</span>
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  AI analyzes transcripts, job offers, and advisor letters. Auto-scoring for academic fit with flagging of high-complexity submissions.
-                </p>
+                  No more drowning in transcript reviews and manual scoring. AI analyzes transcripts, job offers, and advisor letters. Auto-scoring for academic fit with flagging of high-complexity submissions.                </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-600" />
@@ -439,8 +438,7 @@ const StatusBridgeLanding = () => {
                   <span className="text-gray-400"> effortlessly.</span>
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Real-time compliance tracking with automated calculations. Handle policy exceptions for medical leave and GSI assignments with full audit trails.
-                </p>
+                  Never miss another critical deadline or violation. Real-time compliance tracking with automated calculations. Handle policy exceptions for medical leave and GSI assignments with full audit trails.                </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-600" />
@@ -523,7 +521,7 @@ const StatusBridgeLanding = () => {
             {/* Step 1 */}
             <div className="bg-gray-50 rounded-lg p-8 relative">
               <div className="absolute -top-4 left-8">
-                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                   1
                 </div>
               </div>
@@ -616,7 +614,6 @@ const StatusBridgeLanding = () => {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
