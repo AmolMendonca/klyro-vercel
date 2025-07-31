@@ -17,6 +17,13 @@ import {
   Calendar
 } from 'lucide-react';
 
+import ucBerkeleyLogo from './logos/Berkeley.svg'
+import UMichLogo from './logos/UMich.svg'
+import ColumbiaLogo from './logos/Columbia.svg'
+import OracleLogo from './logos/oracle.svg'
+import MS from './logos/MS.svg'
+import Elevance from './logos/Elevance.svg'
+
 const StatusBridgeLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -187,6 +194,78 @@ const StatusBridgeLanding = () => {
           </div>
         </div>
       </section>
+      {/* Credentials Section - Logo showcase */}
+      <section className="px-6 py-16 bg-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-sm font-medium text-gray-500 mb-8 tracking-wide uppercase">
+            Built by AI experts with industry edge
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+            {/* UC Berkeley */}
+            <div className="flex items-center justify-center h-16 w-full opacity-60 hover:opacity-80 transition-opacity">
+              <img
+                src={ucBerkeleyLogo}
+                alt="UC Berkeley logo"
+                className="h-12 w-auto object-contain"
+                style={{ filter: 'grayscale(100%) brightness(30%)' }}
+              />
+            </div>
+
+            {/* University of Michigan */}
+            <div className="flex items-center justify-center h-16 w-full opacity-60 hover:opacity-80 transition-opacity">
+              <img
+                src={UMichLogo}
+                alt="University of Michigan logo"
+                className="h-12 w-auto object-contain"
+                style={{ filter: 'grayscale(100%) brightness(30%)' }}
+              />
+            </div>
+            
+            {/* Elevance Health */}
+            <div className="flex items-center justify-center h-16 w-full opacity-60 hover:opacity-80 transition-opacity">
+              <img
+                src={Elevance}
+                alt="Elevance Health logo"
+                className="h-12 w-auto object-contain"
+                style={{ filter: 'grayscale(100%) brightness(30%)' }}
+              />
+            </div>
+            
+            {/* Columbia */}
+            <div className="flex items-center justify-center h-16 w-full opacity-60 hover:opacity-80 transition-opacity">
+              <img
+                src={ColumbiaLogo}
+                alt="Columbia University logo"
+                className="h-12 w-auto object-contain"
+                style={{ filter: 'grayscale(100%) brightness(30%)' }}
+              />
+            </div>
+            
+            {/* Oracle */}
+            <div className="flex items-center justify-center h-16 w-full opacity-60 hover:opacity-80 transition-opacity">
+              <img
+                src={OracleLogo}
+                alt="Oracle logo"
+                className="h-12 w-auto object-contain"
+                style={{ filter: 'grayscale(100%) brightness(30%)' }}
+              />
+            </div>
+            
+            {/* Morgan Stanley */}
+            <div className="flex items-center justify-center h-16 w-full opacity-60 hover:opacity-80 transition-opacity">
+              <img
+                src={MS}
+                alt="Morgan Stanley logo"
+                className="h-12 w-auto object-contain"
+                style={{ filter: 'grayscale(100%) brightness(30%)' }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Feature Sections - Notion's card style */}
       <section className="px-6 py-24 bg-gray-50">
@@ -559,5 +638,6 @@ const StatusBridgeLanding = () => {
     </div>
   );
 };
+
 
 export default StatusBridgeLanding;
