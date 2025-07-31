@@ -23,6 +23,11 @@ import {
   Database
 } from 'lucide-react';
 
+import yugamImage from './images/yugam-surana.jpeg';
+import ineshImage from './images/inesh-tickoo.jpeg';
+import priteshImage from './images/pritesh.jpeg';
+import amolImage from './images/amol.JPG';
+
 const AboutUsPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -34,6 +39,7 @@ const AboutUsPage = () => {
       degree: "BS Computer Science",
       bio: "Led product across early-stage startups, shipping web3 tools, and AI-driven search products. Helped 5 startups GTM, and contributed to pre-seed rounds. Co-founded a health-tech startup which scaled to 20,000+ users and partnered with hospitals and tech companies.",
       avatar: "AM",
+      image: amolImage, // Add this line
       color: "bg-blue-100 text-blue-700"
     },
     {
@@ -43,6 +49,7 @@ const AboutUsPage = () => {
       degree: "BS & MS Computer Science",
       bio: "Led reinforcement learning and statistical arbitrage projects, built AI agents for top hedge funds and banks, and developed real-time trading platforms. Teaches AI and databases at the university as a graduate student instructor.",
       avatar: "PK",
+      image: priteshImage, // Add this line
       color: "bg-green-100 text-green-700"
     },
     {
@@ -52,6 +59,7 @@ const AboutUsPage = () => {
       degree: "BS Computer Science & Business",
       bio: "Built products used by thousands and designed tools for Fortune 500 banks. Led product at both early-stage ventures and corporate internships, raised pre-seed funding, and conducted cognitive research on gamification and attention.",
       avatar: "IT",
+      image: ineshImage, // Add this line
       color: "bg-purple-100 text-purple-700"
     },
     {
@@ -61,6 +69,7 @@ const AboutUsPage = () => {
       degree: "BS EECS & MS Financial Engineering",
       bio: "AI Research Fellow at Morgan Stanley. Built AI-powered marketplaces and ML pipelines at Oracle. Founded AI ventures and specializes in machine learning systems for financial and educational technology applications.",
       avatar: "YS",
+      image: yugamImage, // Add this line
       color: "bg-orange-100 text-orange-700"
     }
   ];
@@ -312,9 +321,19 @@ const AboutUsPage = () => {
           <div className="space-y-16">
             {teamMembers.map((member, index) => (
               <div key={index} className="text-center max-w-3xl mx-auto">
-                <div className={`w-24 h-24 ${member.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                  <span className="text-2xl font-bold">{member.avatar}</span>
-                </div>
+                {member.image ? (
+                  <div className="w-44 h-44 mx-auto mb-6 overflow-hidden rounded-full">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className={`w-24 h-24 ${member.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
+                    <span className="text-2xl font-bold">{member.avatar}</span>
+                  </div>
+                )}
                 <h3 className="text-2xl font-semibold text-gray-900 mb-2">{member.name}</h3>
                 <p className="text-lg text-gray-600 font-medium mb-3">{member.role}</p>
                 <div className="flex items-center justify-center space-x-2 text-gray-500 mb-4">
