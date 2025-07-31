@@ -27,9 +27,33 @@ import yugamImage from './images/yugam-surana.jpeg';
 import ineshImage from './images/inesh-tickoo.jpeg';
 import priteshImage from './images/pritesh.jpeg';
 import amolImage from './images/amol.JPG';
+import ucBerkeleyLogo from './logos/Berkeley.svg';
+import UMichLogo from './logos/UMich.svg';
+import ColumbiaLogo from './logos/Columbia.svg';
+import OracleLogo from './logos/oracle.svg';
+import MS from './logos/MS.svg';
+import Elevance from './logos/Elevance.svg';
 
 const AboutUsPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
+
+  const logos = [
+    { src: UMichLogo, alt: "University of Michigan" },
+    { src: ucBerkeleyLogo, alt: "UC Berkeley" },
+    { src: ColumbiaLogo, alt: "Columbia University" },
+    { src: MS, alt: "Morgan Stanley" },
+    { src: OracleLogo, alt: "Oracle" },
+    { src: Elevance, alt: "Elevance Health" }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLogoIndex((prevIndex) => (prevIndex + 1) % logos.length);
+    }, 2000); // Change logo every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [logos.length]);
 
   const teamMembers = [
     {
@@ -303,6 +327,74 @@ const AboutUsPage = () => {
                   "Now DSOs can focus on what they do best - supporting students through their academic journey."
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials Section */}
+      <section className="px-6 py-16 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Backed by experience from
+            </h2>
+            <p className="text-gray-600">
+              Our team brings expertise from top universities and leading technology companies
+            </p>
+          </div>
+          
+          {/* Desktop version - show all logos */}
+          <div className="hidden md:grid md:grid-cols-6 gap-8 items-center justify-items-center">
+            {logos.map((logo, index) => (
+              <img 
+                key={index}
+                src={logo.src} 
+                alt={logo.alt} 
+                className="h-12 w-auto opacity-40 hover:opacity-60 transition-opacity"
+                style={{ filter: 'grayscale(100%) brightness(30%)' }}
+              />
+            ))}
+          </div>
+
+          {/* Mobile version - carousel */}
+          <div className="md:hidden">
+            <div className="flex justify-center items-center">
+              <div className="relative w-32 h-16 overflow-hidden bg-gray-50 rounded-lg">
+                {logos.map((logo, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${
+                      index === currentLogoIndex ? 'opacity-40' : 'opacity-0'
+                    }`}
+                  >
+                    <img 
+                      src={logo.src} 
+                      alt={logo.alt} 
+                      className="h-10 w-auto"
+                      style={{ filter: 'grayscale(100%) brightness(30%)' }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Carousel indicators */}
+            <div className="flex justify-center mt-4 space-x-2">
+              {logos.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentLogoIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                    index === currentLogoIndex ? 'bg-gray-600' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
+            
+            {/* Debug info - remove this after testing */}
+            <div className="text-center mt-2 text-xs text-gray-500">
+              Current: {currentLogoIndex + 1} / {logos.length}
             </div>
           </div>
         </div>
