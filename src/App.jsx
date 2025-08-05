@@ -178,7 +178,7 @@ const StatusBridgeLanding = () => {
                 onClick={() => document.getElementById('interest-form').scrollIntoView({ behavior: 'smooth' })}
                 className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium hover:bg-black transition-colors flex items-center"
               >
-                Get Klyro free
+                Join our Waitlist
                 <ArrowRight className="w-4 h-4 ml-2" />
               </button>
 <button 
