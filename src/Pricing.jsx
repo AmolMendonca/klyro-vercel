@@ -238,10 +238,12 @@ const PricingPage = () => {
                 </div>
               </div>
               
-              <button className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-md font-medium hover:border-gray-400 transition-colors">
-                Contact for pricing
-              </button>
-            </div>
+<button 
+  className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-md font-medium hover:border-gray-400 transition-colors"
+  onClick={() => window.open('https://cal.com/klyro/sales', '_blank')}
+>
+  Contact for pricing
+</button>            </div>
 
             {/* Professional Tier - Featured */}
             <div className="bg-white rounded-lg border-2 border-gray-900 p-8 shadow-lg relative">
@@ -308,10 +310,12 @@ const PricingPage = () => {
                 </div>
               </div>
               
-              <button className="w-full bg-gray-900 text-white py-3 px-4 rounded-md font-medium hover:bg-black transition-colors">
-                Contact for pricing
-              </button>
-            </div>
+<button 
+  className="w-full bg-gray-900 text-white py-3 px-4 rounded-md font-medium hover:bg-black transition-colors"
+  onClick={() => window.open('https://cal.com/klyro/sales', '_blank')}
+>
+  Contact for pricing
+</button>            </div>
 
             {/* Enterprise Tier */}
             <div className="bg-white rounded-lg border border-gray-200 p-8 shadow-sm">
@@ -372,10 +376,12 @@ const PricingPage = () => {
                 </div>
               </div>
               
-              <button className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-md font-medium hover:border-gray-400 transition-colors">
-                Contact for pricing
-              </button>
-            </div>
+<button 
+  className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-md font-medium hover:border-gray-400 transition-colors"
+  onClick={() => window.open('https://cal.com/klyro/sales', '_blank')}
+>
+  Contact for pricing
+</button>            </div>
           </div>
         </div>
       </section>
@@ -423,11 +429,13 @@ const PricingPage = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-gray-900 text-white px-8 py-4 rounded-md font-medium hover:bg-black transition-colors flex items-center text-lg">
-              Schedule a call
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </button>
-            <button className="border border-gray-300 text-gray-700 px-8 py-4 rounded-md font-medium hover:border-gray-400 transition-colors flex items-center text-lg">
+<button 
+  className="bg-gray-900 text-white px-8 py-4 rounded-md font-medium hover:bg-black transition-colors flex items-center text-lg"
+  onClick={() => window.open('https://cal.com/klyro/sales', '_blank')}
+>
+  Schedule a call
+  <ArrowRight className="w-4 h-4 ml-2" />
+</button>            <button className="border border-gray-300 text-gray-700 px-8 py-4 rounded-md font-medium hover:border-gray-400 transition-colors flex items-center text-lg">
               <Mail className="w-4 h-4 mr-2" />
               Email us
             </button>
