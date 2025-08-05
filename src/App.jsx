@@ -102,10 +102,10 @@ const StatusBridgeLanding = () => {
   
               <div className="flex items-center space-x-3">
                 <button 
-                  onClick={() => handleNavigation('/cpt-demo')}
+                  onClick={() => window.location.href = 'https://cal.com/klyro/chat'}
                   className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition-colors"
                 >
-                  Try our CPT MVP
+                  Book a Demo
                 </button>
               </div>
             </div>
@@ -181,11 +181,13 @@ const StatusBridgeLanding = () => {
                 Get Klyro free
                 <ArrowRight className="w-4 h-4 ml-2" />
               </button>
-              <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-md font-medium hover:border-gray-400 transition-colors flex items-center">
-                <Play className="w-4 h-4 mr-2" />
-                Request demo
-              </button>
-            </div>
+<button 
+  className="border border-gray-300 text-gray-700 px-6 py-3 rounded-md font-medium hover:border-gray-400 transition-colors flex items-center"
+  onClick={() => window.location.href = 'https://cal.com/klyro/chat'}
+>
+  <Play className="w-4 h-4 mr-2" />
+  Request demo
+</button>            </div>
 
             {/* Notion-style feature highlights */}
             <div className="text-sm text-gray-500 space-y-2">
