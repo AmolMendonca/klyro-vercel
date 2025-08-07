@@ -80,18 +80,18 @@ const AboutUsPage = () => {
       github: "https://github.com/billymidnight",
       color: "bg-green-100 text-green-700"
     },
-    {
-      name: "Inesh Tickoo",
-      role: "Co-founder & COO",
-      education: "Ohio Wesleyan University",
-      degree: "BS Computer Science & Business",
-      bio: "Built products used by thousands and designed tools for Fortune 500 banks. Led product at both early-stage ventures and corporate internships, raised pre-seed funding, and conducted cognitive research on gamification and attention.",
-      avatar: "IT",
-      image: ineshImage,
-      linkedin: "https://www.linkedin.com/in/ineshtickoo/",
-      github: "https://github.com/9nesh",
-      color: "bg-purple-100 text-purple-700"
-    },
+    // {
+    //   name: "Inesh Tickoo",
+    //   role: "Co-founder & COO",
+    //   education: "Ohio Wesleyan University",
+    //   degree: "BS Computer Science & Business",
+    //   bio: "Built products used by thousands and designed tools for Fortune 500 banks. Led product at both early-stage ventures and corporate internships, raised pre-seed funding, and conducted cognitive research on gamification and attention.",
+    //   avatar: "IT",
+    //   image: ineshImage,
+    //   linkedin: "https://www.linkedin.com/in/ineshtickoo/",
+    //   github: "https://github.com/9nesh",
+    //   color: "bg-purple-100 text-purple-700"
+    // },
     {
       name: "Yugam Surana",
       role: "CTO AI",
