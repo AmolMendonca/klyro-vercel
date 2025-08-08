@@ -29,6 +29,8 @@ import StudentDashboard from './Students.jsx'
 
 import KlyroWaitlistPage from './Waitlist.jsx'
 
+import KlyroBlog from './Blog.jsx'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -58,6 +60,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/requests" element={<PendingRequests />} />
         <Route path="/students" element={<StudentDashboard />} />
         <Route path="/waitlist" element={<KlyroWaitlistPage />} />
+        <Route path="/blog" element={<KlyroBlog/>} />
 
       </Routes>
     </BrowserRouter>

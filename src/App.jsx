@@ -99,6 +99,16 @@ const StatusBridgeLanding = () => {
                   Pricing
                 </button>
               </div>
+
+              <div className="flex items-center space-x-6 text-sm">
+                <button 
+                  onClick={() => handleNavigation('/blog')}
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Blog
+                </button>
+              </div>
+
   
               <div className="flex items-center space-x-3">
                 <button 
